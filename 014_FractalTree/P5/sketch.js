@@ -1,21 +1,24 @@
-// Coding Rainbow
-// Daniel Shiffman
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/0jjeOYMjmDU
+// Fractal Tree
+// The Coding Train / Daniel Shiffman
+// https://thecodingtrain.com/challenges/14-fractal-trees-recursive
+// https://youtu.be/0jjeOYMjmDU
 
-var angle = 0;
-var slider;
+// https://editor.p5js.org/codingtrain/sketches/xTjmYXU3q
+
+let angle = 0;
+let slider;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(640, 360);
   slider = createSlider(0, TWO_PI, PI / 4, 0.01);
 }
 
 function draw() {
-  background(51);
+  background(0);
   angle = slider.value();
   stroke(255);
-  translate(200, height);
+  strokeWeight(2);
+  translate(width * 0.5, height);
   branch(100);
 }
 
@@ -32,6 +35,4 @@ function branch(len) {
     branch(len * 0.67);
     pop();
   }
-
-  //line(0, 0, 0, -len * 0.67);
 }
