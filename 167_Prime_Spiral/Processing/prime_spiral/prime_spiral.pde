@@ -18,16 +18,10 @@ int cols, rows;
 
 // Function to test if number is prime
 boolean isPrime(int value) {
-  if (value < 2 ) {
-      return false;
-      
-  } else if(value < 4 ){ 
-    return true;
-    
-  } else if(value % 2 ==0 || value % 3 ==0) {
-    return false;
-    
-  } else {
+  if (value < 2 ) return false;
+  else if(value < 4 ) return true;
+  else if(value % 2 ==0 || value % 3 ==0) return false; 
+  else {
     for (int i = 5; i <= sqrt(value); i += 6) {
       if (value % i == 0 || value % (i + 2) == 0 ) {
         return false;
