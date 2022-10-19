@@ -1,7 +1,8 @@
+// Mad Libs!
 // Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/ziBO-U2_t3k
+// https://thecodingtrain.com/challenges/39-madlibs-generator
+// https://youtu.be/ziBO-U2_t3k
+// https://editor.p5js.org/codingtrain/sketches/8gVGg0VR3
 
 var data;
 
