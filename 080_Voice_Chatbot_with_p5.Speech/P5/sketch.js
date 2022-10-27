@@ -1,28 +1,31 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
+// Chat Bot
+// The Coding Train / Daniel Shiffman
+// https://thecodingtrain.com/challenges/80-voice-chatbot-with-p5speech
+// https://youtu.be/iFTgphKCP9U
 
-// Voice Chatbot with p5.Speech
-// Edited Video: https://youtu.be/iFTgphKCP9U
+// Code from Challenge: https://editor.p5js.org/codingtrain/sketches/QcY2Z36mJ
 
+// This code has been adapted to use promises instead of callbacks since callbacks are deprecated in RiveScript.
 function setup() {
   noCanvas();
   let speech = new p5.Speech();
-  let speechRec = new p5.SpeechRec('en-US', gotSpeech);
+  let speechRec = new p5.SpeechRec("en-US", gotSpeech);
   let continuous = true;
   let interim = false;
   speechRec.start(continuous, interim);
 
   let bot = new RiveScript();
-  bot.loadFile('brain.rive', brainReady, brainError);
+
+  // changed callbacks to .then and .catch
+  bot.loadFile("brain.txt").then(brainReady).catch(brainError);
 
   function brainReady() {
-    console.log('Chatbot ready!');
+    console.log("Chatbot ready!");
     bot.sortReplies();
   }
 
   function brainError() {
-    console.log('Chatbot error!');
+    console.log("Chatbot error!");
   }
 
   // let button = select('#submit');
@@ -31,13 +34,14 @@ function setup() {
 
   // button.mousePressed(chat);
 
-  function gotSpeech() {
+  // Using async and await
+  async function gotSpeech() {
     if (speechRec.resultValue) {
       let input = speechRec.resultString;
-      //user_input.value(input);
-      let reply = bot.reply('local-user', input);
+      // user_input.value(input);
+      let reply = await bot.reply("local-user", input);
       speech.speak(reply);
-      //output.html(reply);
+      // output.html(reply);
     }
   }
 
