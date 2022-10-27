@@ -17,7 +17,7 @@ function setup() {
   let bot = new RiveScript();
 
   // changed callbacks to .then and .catch
-  bot.loadFile("brain.txt").then(brainReady).catch(brainError);
+  bot.loadFile("brain.rive").then(brainReady).catch(brainError);
 
   function brainReady() {
     console.log("Chatbot ready!");
