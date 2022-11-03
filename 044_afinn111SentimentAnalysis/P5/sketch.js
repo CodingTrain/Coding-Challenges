@@ -6,7 +6,7 @@
 var afinn;
 
 function preload() {
-  afinn = loadJSON('afinn111.json');
+  afinn = loadJSON('afinn111-edited.json');
 }
 
 function setup() {
