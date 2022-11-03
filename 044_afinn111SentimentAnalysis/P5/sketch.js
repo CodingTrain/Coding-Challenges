@@ -1,12 +1,16 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/VV1JmMYceJw
+// AFINN 11 Sentiment Analysis
+// The Coding Train / Daniel Shiffman
+// https://thecodingtrain.com/
+// Part 1: https://youtu.be/uw3GbsY_Pbc
+// Part 2: https://youtu.be/VV1JmMYceJw
+
+// https://editor.p5js.org/codingtrain/sketches/aNeMdpy-b
 
 var afinn;
 
 function preload() {
-  afinn = loadJSON('afinn111.json');
+  // Using an edited version of AFINN111 list to remove NSFW and offensive words
+  afinn = loadJSON('afinn111-edited.json');
 }
 
 function setup() {
