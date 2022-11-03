@@ -6,6 +6,7 @@
 var afinn;
 
 function preload() {
+  // Using an edited version of AFINN111 list to remove NSFW and offensive words
   afinn = loadJSON('afinn111-edited.json');
 }
 
