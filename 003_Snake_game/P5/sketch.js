@@ -6,6 +6,13 @@
 let s;
 let scl = 20;
 let food;
+/**
+ * 0: Up
+ * 1: Down
+ * 2: Left
+ * 3: Right
+ */
+let direction = 3;
 
 function setup() {
   createCanvas(600, 600);
@@ -38,13 +45,17 @@ function draw() {
 }
 
 function keyPressed() {
-  if (keyCode === UP_ARROW) {
+  if (keyCode === UP_ARROW && direction != 1) {
+    direction = 0;
     s.dir(0, -1);
-  } else if (keyCode === DOWN_ARROW) {
+  } else if (keyCode === DOWN_ARROW && direction != 0) {
+    direction = 1;
     s.dir(0, 1);
-  } else if (keyCode === RIGHT_ARROW) {
+  } else if (keyCode === RIGHT_ARROW && direction != 2) {
+    direction = 3;
     s.dir(1, 0);
-  } else if (keyCode === LEFT_ARROW) {
+  } else if (keyCode === LEFT_ARROW && direction != 3) {
+    direction = 2;
     s.dir(-1, 0);
   }
 }
