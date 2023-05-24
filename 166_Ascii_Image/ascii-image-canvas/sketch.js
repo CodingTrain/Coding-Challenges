@@ -40,7 +40,7 @@ function draw() {
       //square(i * w, j * h, w);
       
       const len = density.length;
-      const charIndex = floor(map(avg,0,255,len,0));
+      const charIndex = floor(map(avg,0,256,len,0));
       
       
       

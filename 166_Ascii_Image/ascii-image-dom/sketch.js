@@ -32,7 +32,7 @@ function setup() {
       const avg = (r + g + b) / 3;
 
       const len = density.length;
-      const charIndex = floor(map(avg, 0, 255, len, 0));
+      const charIndex = floor(map(avg, 0, 256, len, 0));
 
       const c = density.charAt(charIndex);
       if (c == " ") row += "&nbsp;";
