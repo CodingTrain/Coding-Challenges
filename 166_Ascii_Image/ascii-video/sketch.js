@@ -33,7 +33,7 @@ function draw() {
       const b = video.pixels[pixelIndex + 2];
       const avg = (r + g + b) / 3;
       const len = density.length;
-      const charIndex = floor(map(avg, 0, 255, 0, len));
+      const charIndex = floor(map(avg, 0, 256, 0, len));
       const c = density.charAt(charIndex);
       if (c == " ") asciiImage += "&nbsp;";
       else asciiImage += c;
